@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false,
+    "outDir": "./dist/",
+    "target": "es2015",
+    "module": "commonjs",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "lib": ["es2019", "dom"]
+  }
+}
