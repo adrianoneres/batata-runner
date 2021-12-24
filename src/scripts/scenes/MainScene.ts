@@ -26,7 +26,7 @@ export class MainScene extends Scene {
     state.resources['run_sound'].sound.stop();
     state.resources['run_sound'].sound.play({
       loop: true,
-      volume: 0.5,
+      volume: 0.25,
     });
   }
 

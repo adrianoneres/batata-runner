@@ -1,4 +1,4 @@
-import { AnimatedSprite, Container, Graphics, Sprite, Text } from 'pixi.js';
+import { AnimatedSprite, Container, Sprite, Text } from 'pixi.js';
 
 import { state } from '../state/Global';
 import { Scene } from './Scene';
@@ -23,7 +23,7 @@ export class MainMenuScene extends Scene {
     this.charContainer = new Container();
     this.createBackground();
     this.createLogo();
-    this.createCharactersContainer();
+    this.createPopup();
     this.createPlayButton();
 
     state.resources['run_sound'].sound.stop();
@@ -48,7 +48,7 @@ export class MainMenuScene extends Scene {
     this.container.addChild(this.logo);
   }
 
-  createCharactersContainer() {
+  createPopup() {
     this.popup = new Sprite(state.resources['select_char'].texture);
     this.popup.interactive = true;
     this.popup.buttonMode = true;
@@ -107,16 +107,24 @@ export class MainMenuScene extends Scene {
         : currentCharIndex + 1;
     const nextChar = state.characters[nextIndex];
     state.character = nextChar.id;
+    state.resources['character_select_sound'].sound.play({
+      volume: 1,
+    });
     this.showCharacter(nextChar.id);
   }
 
   createPlayButton() {
-    const button = new Sprite(state.resources['potato'].texture);
+    const button = new Sprite(state.resources['play_button'].texture);
+    button.width = 140;
+    button.height = 70;
     button.x = CENTER_X - button.width / 2;
     button.y = CENTER_Y + this.popup.height + 20;
     button.interactive = true;
     button.buttonMode = true;
     button.on('pointerdown', () => {
+      state.resources['menu_select_sound'].sound.play({
+        volume: 1,
+      });
       state.scene.start(new MainScene());
     });
     this.container.addChild(button);

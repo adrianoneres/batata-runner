@@ -24,5 +24,6 @@ export const state: IState = {
   characters: [
     { id: 'default', name: 'Default' },
     { id: 'nano', name: 'Nano' },
+    { id: 'leo', name: 'Leo' },
   ],
 };

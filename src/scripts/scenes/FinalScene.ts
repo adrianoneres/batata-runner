@@ -1,4 +1,4 @@
-import { Container, Graphics, Text } from 'pixi.js';
+import { Container, Graphics, Sprite, Text } from 'pixi.js';
 
 import { state } from '../state/Global';
 import { Scene } from './Scene';
@@ -6,9 +6,11 @@ import { LabelScore } from './elements/LabelScore';
 import { MainScene } from './MainScene';
 import { Background } from './elements/Background';
 
+const CENTER_X = window.innerWidth / 2;
+const CENTER_Y = window.innerHeight / 2;
 export class FinalScene extends Scene {
   background: Background;
-  popup: Graphics;
+  popup: Sprite;
   labelScore: LabelScore;
 
   constructor(amount: number) {
@@ -17,12 +19,8 @@ export class FinalScene extends Scene {
     this.container.interactive = true;
     this.createBackground();
     this.createPopup();
-    this.createLabelScore(amount);
-    this.createText();
-
-    this.container.once('pointerdown', () => {
-      state.scene.start(new MainScene());
-    });
+    this.showScore(amount);
+    this.createRestartButton();
   }
 
   createBackground() {
@@ -31,38 +29,39 @@ export class FinalScene extends Scene {
   }
 
   createPopup() {
-    this.popup = new Graphics();
-    const width = 600;
-    const height = 400;
-    const x = window.innerWidth / 2 - width / 2;
-    const y = window.innerHeight / 2 - height / 2;
-    this.popup.beginFill(0x000000, 0.5);
-    this.popup.drawRect(x, y, width, height);
+    this.popup = new Sprite(state.resources['score'].texture);
+    this.popup.x = CENTER_X - this.popup.width / 2;
+    this.popup.y = CENTER_Y - this.popup.height;
     this.container.addChild(this.popup);
   }
 
-  createLabelScore(amount: number) {
-    this.labelScore = new LabelScore(
-      window.innerWidth / 2,
-      window.innerHeight / 2,
-      0.5,
-    );
-    this.container.addChild(this.labelScore);
-    this.labelScore.renderScore(amount);
-  }
-
-  createText() {
-    const text = new Text('');
-    text.anchor.set(0.5);
-    text.x = window.innerWidth / 2;
-    text.y = window.innerHeight / 2 + 100;
-    text.style = {
+  showScore(amount: number) {
+    const scoreText = new Text(`${amount}`);
+    scoreText.style = {
       fontFamily: 'VT323',
-      fontSize: 34,
+      fontSize: 60,
       fill: ['#FFFFFF'],
     };
-    text.text = 'Toque para reiniciar';
-    this.popup.addChild(text);
+    scoreText.y = CENTER_Y - this.popup.height + this.popup.height / 2;
+    scoreText.x = CENTER_X - scoreText.width / 2;
+    this.container.addChild(scoreText);
+  }
+
+  createRestartButton() {
+    const button = new Sprite(state.resources['restart_button'].texture);
+    button.width = 140;
+    button.height = 70;
+    button.x = CENTER_X - button.width / 2;
+    button.y = CENTER_Y - this.popup.height + this.popup.height + 20;
+    button.interactive = true;
+    button.buttonMode = true;
+    button.on('pointerdown', () => {
+      state.resources['menu_select_sound'].sound.play({
+        volume: 1,
+      });
+      state.scene.start(new MainScene());
+    });
+    this.container.addChild(button);
   }
 
   update(deltaTime: number) {
