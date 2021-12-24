@@ -34,8 +34,8 @@ export class Platforms {
     this.container = new Container();
     this.ranges = {
       rows: {
-        min: 1,
-        max: 4,
+        min: 3,
+        max: 7,
       },
       cols: {
         min: 3,

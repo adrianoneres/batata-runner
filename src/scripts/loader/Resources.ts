@@ -4,6 +4,7 @@ import logo from '../../sprites/logo.png';
 import platform from '../../sprites/platform.png';
 import potato from '../../sprites/potato.png';
 import tile from '../../sprites/tile.png';
+import select_char from '../../sprites/select_char.png';
 import default_walk1 from '../../sprites/default_walk1.png';
 import default_walk2 from '../../sprites/default_walk2.png';
 import nano_walk1 from '../../sprites/nano_walk1.png';
@@ -26,6 +27,7 @@ export const sprites: IResources = {
   platform,
   potato,
   tile,
+  select_char,
   default_walk1,
   default_walk2,
   nano_walk1,

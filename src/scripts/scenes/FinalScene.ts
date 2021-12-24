@@ -7,7 +7,6 @@ import { MainScene } from './MainScene';
 import { Background } from './elements/Background';
 
 export class FinalScene extends Scene {
-  container: Container;
   background: Background;
   popup: Graphics;
   labelScore: LabelScore;
@@ -58,8 +57,7 @@ export class FinalScene extends Scene {
     text.x = window.innerWidth / 2;
     text.y = window.innerHeight / 2 + 100;
     text.style = {
-      fontFamily: 'Verdana',
-      fontWeight: 'bold',
+      fontFamily: 'VT323',
       fontSize: 34,
       fill: ['#FFFFFF'],
     };

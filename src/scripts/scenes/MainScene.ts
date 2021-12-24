@@ -9,7 +9,6 @@ import { Hero } from '../characters/Hero';
 import { LabelScore } from './elements/LabelScore';
 
 export class MainScene extends Scene {
-  container: Container;
   background: Background;
   platforms: Platforms;
   hero: Hero;
@@ -46,6 +45,7 @@ export class MainScene extends Scene {
     this.container.addChild(this.hero.sprite);
     this.container.interactive = true;
     this.container.on('pointerdown', () => {
+      console.log('click');
       this.hero.startJump();
     });
     this.hero.sprite.once('die', () => {

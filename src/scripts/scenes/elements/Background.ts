@@ -1,4 +1,4 @@
-import { Container, Sprite } from 'pixi.js';
+import { Container, Graphics, Sprite } from 'pixi.js';
 import { state } from '../../state/Global';
 
 export class Background {
@@ -9,7 +9,18 @@ export class Background {
   constructor() {
     this.speed = 1.5;
     this.container = new Container();
+    this.container.height = window.innerHeight;
+    this.createDefaultLayer();
     this.createSprites();
+  }
+
+  createDefaultLayer() {
+    const layer = new Graphics();
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    layer.beginFill(0x92b9ff);
+    layer.drawRect(0, 0, width, height);
+    this.container.addChild(layer);
   }
 
   createSprites() {
@@ -22,7 +33,7 @@ export class Background {
   createSprite(index: number) {
     const sprite = new Sprite(state.resources['background'].texture);
     sprite.x = sprite.width * index;
-    sprite.y = 0;
+    sprite.y = window.innerHeight - sprite.height;
 
     this.container.addChild(sprite);
     this.sprites.push(sprite);
