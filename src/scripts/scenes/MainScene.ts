@@ -22,6 +22,13 @@ export class MainScene extends Scene {
     this.createPlatforms();
     this.createHero();
     this.createUI();
+
+    state.resources['main_sound'].sound.stop();
+    state.resources['run_sound'].sound.stop();
+    state.resources['run_sound'].sound.play({
+      loop: true,
+      volume: 0.5,
+    });
   }
 
   createBackground() {
@@ -42,6 +49,7 @@ export class MainScene extends Scene {
       this.hero.startJump();
     });
     this.hero.sprite.once('die', () => {
+      state.resources['game_over_sound'].sound.play({ volume: 0.5 });
       state.scene.start(new FinalScene(this.hero.score));
       state.speed = -5;
     });

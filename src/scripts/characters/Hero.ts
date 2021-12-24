@@ -16,8 +16,8 @@ export class Hero {
     this.jumpIndex = 0;
     this.platform = null;
     this.sprite = new AnimatedSprite([
-      state.resources['nano_walk1'].texture,
-      state.resources['nano_walk2'].texture,
+      state.resources[`${state.character}_walk1`].texture,
+      state.resources[`${state.character}_walk2`].texture,
     ]);
     this.sprite.x = 100;
     this.sprite.y = 100;
@@ -48,6 +48,7 @@ export class Hero {
 
   startJump() {
     if (this.platform || this.jumpIndex === 1) {
+      state.resources['jump_sound'].sound.play({ volume: 0.1 });
       ++this.jumpIndex;
       this.platform = null;
       this.distanceY = -25;
@@ -70,13 +71,14 @@ export class Hero {
       ++this.distanceY;
       this.sprite.y += this.distanceY;
     }
-    if (this.sprite.y > window.innerHeight) {
+    if (this.sprite.y > window.innerHeight || this.sprite.x < 0) {
       this.sprite.emit('die');
     }
   }
 
   collect() {
     ++this.score;
+    state.resources['collect_sound'].sound.play({ volume: 0.5 });
     this.sprite.emit('score', { score: this.score });
     document.dispatchEvent(
       new CustomEvent('collect', {

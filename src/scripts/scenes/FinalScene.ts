@@ -63,7 +63,7 @@ export class FinalScene extends Scene {
       fontSize: 34,
       fill: ['#FFFFFF'],
     };
-    text.text = 'Tap to restart';
+    text.text = 'Toque para reiniciar';
     this.popup.addChild(text);
   }
 

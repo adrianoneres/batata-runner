@@ -16,7 +16,7 @@ export class AppLoader {
         this.loader.add(key, sprites[key]);
       }
 
-      this.loader.load((loader, resources) => {
+      this.loader.load((_, resources) => {
         state.resources = resources;
         resolve();
       });
