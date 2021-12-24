@@ -78,5 +78,13 @@ export class Hero {
   collect() {
     ++this.score;
     this.sprite.emit('score', { score: this.score });
+    document.dispatchEvent(
+      new CustomEvent('collect', {
+        bubbles: true,
+        detail: {
+          score: this.score,
+        },
+      }),
+    );
   }
 }

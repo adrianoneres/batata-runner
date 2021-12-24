@@ -21,7 +21,7 @@ export class Platform {
     this.collectables = [];
     this.collectablesOffsetMin = 100;
     this.collectablesOffsetMax = 200;
-    this.distanceX = -5;
+    this.distanceX = state.speed;
     this.rows = rows;
     this.cols = cols;
     this.width = cols * TILE_SIZE;
@@ -121,6 +121,12 @@ export class Platform {
         hero.moveByPlatform(this);
       }
     }
+  }
+
+  increaseSpeed(score: number) {
+    const speed = score === 0 ? -5 : -5 - score * 0.25;
+    state.speed = speed;
+    this.distanceX = speed;
   }
 
   move() {

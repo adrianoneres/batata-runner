@@ -1146,6 +1146,11 @@ picomatch@^2.2.3:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.0.tgz#f1f061de8f6a4bf022892e2d128234fb98302972"
   integrity sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==
 
+pixi-sound@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/pixi-sound/-/pixi-sound-3.0.5.tgz#b9edc12ee543ac3470c763484e1d1f7c4e842e2b"
+  integrity sha512-I3qDfaDI3xSwMuH8ZbhIyoZiRv0jEDxR60D2rBZTTvlK5owxo5Sx4vDaQlrIyETilTU0xvBtiwh7fPGKBOsCTw==
+
 pixi.js@*, pixi.js@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/pixi.js/-/pixi.js-6.2.0.tgz#502f197f87e5f8675afd7da0ab70b27b6542171e"

@@ -2,15 +2,15 @@ import { LoaderResource } from 'pixi.js';
 import { SceneManager } from '../scenes/SceneManager';
 
 interface IState {
-  score: number;
+  speed: number;
   scene: SceneManager;
   resources: {
-    [key: string]: LoaderResource;
+    [key: string]: any;
   };
 }
 
 export const state: IState = {
-  score: 0,
+  speed: -5,
   scene: {} as SceneManager,
   resources: {},
 };

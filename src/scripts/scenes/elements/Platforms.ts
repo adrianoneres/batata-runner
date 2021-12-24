@@ -52,6 +52,14 @@ export class Platforms {
       cols: 6,
       x: 200,
     });
+
+    document.addEventListener('collect', ({ detail }: CustomEvent) => {
+      const { score } = detail;
+
+      this.platforms.forEach(platform => {
+        platform.increaseSpeed(score);
+      });
+    });
   }
 
   get randomData() {

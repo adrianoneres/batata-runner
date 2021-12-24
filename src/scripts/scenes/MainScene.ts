@@ -41,11 +41,9 @@ export class MainScene extends Scene {
     this.container.on('pointerdown', () => {
       this.hero.startJump();
     });
-    this.hero.sprite.once('score', () => {
-      state.score = this.hero.score;
-    });
     this.hero.sprite.once('die', () => {
       state.scene.start(new FinalScene(this.hero.score));
+      state.speed = -5;
     });
   }
 
