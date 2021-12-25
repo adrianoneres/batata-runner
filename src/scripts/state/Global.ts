@@ -19,8 +19,9 @@ export const state: IState = {
   speed: -5,
   scene: {} as SceneManager,
   resources: {},
-  character: 'biel',
+  character: 'batima',
   characters: [
+    { id: 'batima', name: 'Bátima' },
     { id: 'biel', name: 'Biel' },
     { id: 'caua', name: 'Caua' },
     { id: 'farofa', name: 'Farofa' },

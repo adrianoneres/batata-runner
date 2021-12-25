@@ -10,6 +10,8 @@ import restart_button from '../../sprites/restart_button.png';
 import score from '../../sprites/score.png';
 import default_walk1 from '../../sprites/default_walk1.png';
 import default_walk2 from '../../sprites/default_walk2.png';
+import batima_walk1 from '../../sprites/batima_walk1.png';
+import batima_walk2 from '../../sprites/batima_walk2.png';
 import biel_walk1 from '../../sprites/biel_walk1.png';
 import biel_walk2 from '../../sprites/biel_walk2.png';
 import caua_walk1 from '../../sprites/caua_walk1.png';
@@ -60,6 +62,8 @@ export const sprites: IResources = {
   score,
   default_walk1,
   default_walk2,
+  batima_walk1,
+  batima_walk2,
   biel_walk1,
   biel_walk2,
   caua_walk1,

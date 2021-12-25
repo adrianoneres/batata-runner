@@ -57,7 +57,7 @@ export class MainMenuScene extends Scene {
     this.popup.on('pointerdown', () => this.changeCharacter());
     this.container.addChild(this.popup);
 
-    this.showCharacter('biel');
+    this.showCharacter('batima');
   }
 
   showCharacter(id: string) {
