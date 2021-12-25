@@ -24,6 +24,7 @@ export const state: IState = {
     { id: 'batima', name: 'Bátima' },
     { id: 'biel', name: 'Biel' },
     { id: 'caua', name: 'Caua' },
+    { id: 'flexa', name: 'Flexa' },
     { id: 'farofa', name: 'Farofa' },
     { id: 'gu', name: 'Gu' },
     { id: 'kevin', name: 'Kevin' },

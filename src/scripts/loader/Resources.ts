@@ -18,6 +18,8 @@ import caua_walk1 from '../../sprites/caua_walk1.png';
 import caua_walk2 from '../../sprites/caua_walk2.png';
 import farofa_walk1 from '../../sprites/farofa_walk1.png';
 import farofa_walk2 from '../../sprites/farofa_walk2.png';
+import flexa_walk1 from '../../sprites/flexa_walk1.png';
+import flexa_walk2 from '../../sprites/flexa_walk2.png';
 import gu_walk1 from '../../sprites/gu_walk1.png';
 import gu_walk2 from '../../sprites/gu_walk2.png';
 import kevin_walk1 from '../../sprites/kevin_walk1.png';
@@ -70,6 +72,8 @@ export const sprites: IResources = {
   caua_walk2,
   farofa_walk1,
   farofa_walk2,
+  flexa_walk1,
+  flexa_walk2,
   gu_walk1,
   gu_walk2,
   kevin_walk1,
