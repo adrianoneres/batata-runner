@@ -31,6 +31,7 @@ export const state: IState = {
     { id: 'lo', name: 'Lo' },
     { id: 'marco', name: 'Marco' },
     { id: 'nano', name: 'Nano' },
+    { id: 'shulqs', name: 'Shulqs' },
     { id: 'vi', name: 'Vi' },
   ],
 };

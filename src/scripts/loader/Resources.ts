@@ -28,6 +28,8 @@ import nano_walk1 from '../../sprites/nano_walk1.png';
 import nano_walk2 from '../../sprites/nano_walk2.png';
 import marco_walk1 from '../../sprites/marco_walk1.png';
 import marco_walk2 from '../../sprites/marco_walk2.png';
+import shulqs_walk1 from '../../sprites/shulqs_walk1.png';
+import shulqs_walk2 from '../../sprites/shulqs_walk2.png';
 import vi_walk1 from '../../sprites/vi_walk1.png';
 import vi_walk2 from '../../sprites/vi_walk2.png';
 
@@ -76,6 +78,8 @@ export const sprites: IResources = {
   nano_walk2,
   vi_walk1,
   vi_walk2,
+  shulqs_walk1,
+  shulqs_walk2,
   main_sound,
   run_sound,
   jump_sound,
