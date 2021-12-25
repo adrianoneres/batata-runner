@@ -2,8 +2,18 @@ import background from '../../sprites/background.png';
 import jump from '../../sprites/jump.png';
 import logo from '../../sprites/logo.png';
 import platform from '../../sprites/platform.png';
+import platform_left from '../../sprites/platform_left.png';
+import platform_right from '../../sprites/platform_right.png';
 import potato from '../../sprites/potato.png';
+import potato1 from '../../sprites/potato1.png';
+import potato2 from '../../sprites/potato2.png';
+import potato3 from '../../sprites/potato3.png';
+import potato4 from '../../sprites/potato4.png';
+import potato5 from '../../sprites/potato5.png';
+import potato6 from '../../sprites/potato6.png';
 import tile from '../../sprites/tile.png';
+import tile_left from '../../sprites/tile_left.png';
+import tile_right from '../../sprites/tile_right.png';
 import select_char from '../../sprites/select_char.png';
 import play_button from '../../sprites/play_button.png';
 import restart_button from '../../sprites/restart_button.png';
@@ -56,8 +66,18 @@ export const sprites: IResources = {
   jump,
   logo,
   platform,
+  platform_left,
+  platform_right,
   potato,
+  potato1,
+  potato2,
+  potato3,
+  potato4,
+  potato5,
+  potato6,
   tile,
+  tile_left,
+  tile_right,
   select_char,
   play_button,
   restart_button,

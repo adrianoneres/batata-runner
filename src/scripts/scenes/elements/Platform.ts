@@ -67,7 +67,15 @@ export class Platform {
   }
 
   createTile(row: number, col: number) {
-    const texture = row === 0 ? 'platform' : 'tile';
+    let tile_type = row === 0 ? 'platform' : 'tile';
+    let tile_position = '';
+    if (col === 0) {
+      tile_position = '_left';
+    } else if (col === this.cols - 1) {
+      tile_position = '_right';
+    }
+    const texture = `${tile_type}${tile_position}`;
+    // const texture = row === 0 ? 'platform' : 'tile';
     const tile = new Sprite(state.resources[texture].texture);
     this.container.addChild(tile);
     tile.x = col * tile.width;

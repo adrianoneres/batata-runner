@@ -10,7 +10,6 @@ const CENTER_X = window.innerWidth / 2;
 const CENTER_Y = window.innerHeight / 2;
 export class MainMenuScene extends Scene {
   charContainer: Container;
-  background: Background;
   popup: Sprite;
   labelScore: LabelScore;
   logo: Sprite;
@@ -19,9 +18,7 @@ export class MainMenuScene extends Scene {
 
   constructor() {
     super();
-    this.container = new Container();
     this.charContainer = new Container();
-    this.createBackground();
     this.createLogo();
     this.createPopup();
     this.createPlayButton();
@@ -34,11 +31,6 @@ export class MainMenuScene extends Scene {
     this.container.once('pointerdown', () => {
       state.scene.start(new MainScene());
     });
-  }
-
-  createBackground() {
-    this.background = new Background();
-    this.container.addChild(this.background.container);
   }
 
   createLogo() {

@@ -1,15 +1,25 @@
-import { Sprite } from 'pixi.js';
+import { AnimatedSprite, Sprite } from 'pixi.js';
 
 import { state } from '../../state/Global';
 import { Hero } from '../../characters/Hero';
 
 export class Collectable {
-  sprite: Sprite;
+  sprite: AnimatedSprite;
 
   constructor(x: number, y: number) {
-    this.sprite = new Sprite(state.resources['potato'].texture);
+    this.sprite = new AnimatedSprite([
+      state.resources['potato1'].texture,
+      state.resources['potato2'].texture,
+      state.resources['potato3'].texture,
+      state.resources['potato4'].texture,
+      state.resources['potato5'].texture,
+      state.resources['potato6'].texture,
+    ]);
     this.sprite.x = x;
     this.sprite.y = y;
+    this.sprite.loop = true;
+    this.sprite.animationSpeed = 0.1;
+    this.sprite.play();
   }
 
   get left() {

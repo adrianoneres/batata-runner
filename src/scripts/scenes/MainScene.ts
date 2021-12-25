@@ -16,8 +16,6 @@ export class MainScene extends Scene {
 
   constructor() {
     super();
-    this.container = new Container();
-    this.createBackground();
     this.createPlatforms();
     this.createHero();
     this.createUI();
@@ -28,11 +26,6 @@ export class MainScene extends Scene {
       loop: true,
       volume: 0.1,
     });
-  }
-
-  createBackground() {
-    this.background = new Background();
-    this.container.addChild(this.background.container);
   }
 
   createPlatforms() {

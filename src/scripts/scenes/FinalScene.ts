@@ -9,23 +9,16 @@ import { Background } from './elements/Background';
 const CENTER_X = window.innerWidth / 2;
 const CENTER_Y = window.innerHeight / 2;
 export class FinalScene extends Scene {
-  background: Background;
   popup: Sprite;
   labelScore: LabelScore;
 
   constructor(amount: number) {
     super();
-    this.container = new Container();
     this.container.interactive = true;
     this.createBackground();
     this.createPopup();
     this.showScore(amount);
     this.createRestartButton();
-  }
-
-  createBackground() {
-    this.background = new Background();
-    this.container.addChild(this.background.container);
   }
 
   createPopup() {
