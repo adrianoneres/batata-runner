@@ -1,4 +1,3 @@
-import { LoaderResource } from 'pixi.js';
 import { SceneManager } from '../scenes/SceneManager';
 
 interface IState {
@@ -30,6 +29,7 @@ export const state: IState = {
     { id: 'leo', name: 'Leo' },
     { id: 'lo', name: 'Lo' },
     { id: 'marco', name: 'Marco' },
+    { id: 'miranha', name: 'Miranha' },
     { id: 'nano', name: 'Nano' },
     { id: 'shulqs', name: 'Shulqs' },
     { id: 'vi', name: 'Vi' },
