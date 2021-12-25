@@ -8,8 +8,8 @@ export class LabelScore extends Text {
     this.anchor.set(anchor);
     this.style = {
       fontFamily: 'VT323',
-      fontSize: 40,
-      fill: ['#FF7F50'],
+      fontSize: 30,
+      fill: ['#262626'],
     };
     this.renderScore();
   }

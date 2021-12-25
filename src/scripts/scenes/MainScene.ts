@@ -26,7 +26,7 @@ export class MainScene extends Scene {
     state.resources['run_sound'].sound.stop();
     state.resources['run_sound'].sound.play({
       loop: true,
-      volume: 0.25,
+      volume: 0.1,
     });
   }
 
@@ -45,7 +45,6 @@ export class MainScene extends Scene {
     this.container.addChild(this.hero.sprite);
     this.container.interactive = true;
     this.container.on('pointerdown', () => {
-      console.log('click');
       this.hero.startJump();
     });
     this.hero.sprite.once('die', () => {

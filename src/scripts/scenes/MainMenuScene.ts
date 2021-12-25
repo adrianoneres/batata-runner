@@ -28,7 +28,7 @@ export class MainMenuScene extends Scene {
 
     state.resources['run_sound'].sound.stop();
     state.resources['main_sound'].sound.play({
-      volume: 0.5,
+      volume: 0.25,
     });
 
     this.container.once('pointerdown', () => {
@@ -53,11 +53,11 @@ export class MainMenuScene extends Scene {
     this.popup.interactive = true;
     this.popup.buttonMode = true;
     this.popup.x = CENTER_X - this.popup.width / 2;
-    this.popup.y = CENTER_Y;
+    this.popup.y = CENTER_Y - 24;
     this.popup.on('pointerdown', () => this.changeCharacter());
     this.container.addChild(this.popup);
 
-    this.showCharacter('default');
+    this.showCharacter('biel');
   }
 
   showCharacter(id: string) {
@@ -76,7 +76,7 @@ export class MainMenuScene extends Scene {
       state.resources[`${selectedCharacter.id}_walk2`].texture,
     ]);
     charSprite.x = CENTER_X - charSprite.width / 2;
-    charSprite.y = CENTER_Y + charSprite.height / 2 + 40;
+    charSprite.y = CENTER_Y + charSprite.height / 2 + 16;
     charSprite.loop = true;
     charSprite.animationSpeed = 0.125;
     charSprite.play();
@@ -86,7 +86,7 @@ export class MainMenuScene extends Scene {
     const charName = new Text('');
     charName.anchor.set(0.5);
     charName.x = CENTER_X;
-    charName.y = CENTER_Y + this.popup.height - 30;
+    charName.y = CENTER_Y + this.popup.height - 54;
     charName.style = {
       fontFamily: 'VT323',
       fontSize: 36,

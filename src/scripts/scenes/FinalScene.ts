@@ -52,7 +52,7 @@ export class FinalScene extends Scene {
     button.width = 140;
     button.height = 70;
     button.x = CENTER_X - button.width / 2;
-    button.y = CENTER_Y - this.popup.height + this.popup.height + 20;
+    button.y = CENTER_Y - this.popup.height + this.popup.height + 60;
     button.interactive = true;
     button.buttonMode = true;
     button.on('pointerdown', () => {

@@ -10,10 +10,26 @@ import restart_button from '../../sprites/restart_button.png';
 import score from '../../sprites/score.png';
 import default_walk1 from '../../sprites/default_walk1.png';
 import default_walk2 from '../../sprites/default_walk2.png';
-import nano_walk1 from '../../sprites/nano_walk1.png';
-import nano_walk2 from '../../sprites/nano_walk2.png';
+import biel_walk1 from '../../sprites/biel_walk1.png';
+import biel_walk2 from '../../sprites/biel_walk2.png';
+import caua_walk1 from '../../sprites/caua_walk1.png';
+import caua_walk2 from '../../sprites/caua_walk2.png';
+import farofa_walk1 from '../../sprites/farofa_walk1.png';
+import farofa_walk2 from '../../sprites/farofa_walk2.png';
+import gu_walk1 from '../../sprites/gu_walk1.png';
+import gu_walk2 from '../../sprites/gu_walk2.png';
+import kevin_walk1 from '../../sprites/kevin_walk1.png';
+import kevin_walk2 from '../../sprites/kevin_walk2.png';
 import leo_walk1 from '../../sprites/leo_walk1.png';
 import leo_walk2 from '../../sprites/leo_walk2.png';
+import lo_walk1 from '../../sprites/lo_walk1.png';
+import lo_walk2 from '../../sprites/lo_walk2.png';
+import nano_walk1 from '../../sprites/nano_walk1.png';
+import nano_walk2 from '../../sprites/nano_walk2.png';
+import marco_walk1 from '../../sprites/marco_walk1.png';
+import marco_walk2 from '../../sprites/marco_walk2.png';
+import vi_walk1 from '../../sprites/vi_walk1.png';
+import vi_walk2 from '../../sprites/vi_walk2.png';
 
 import main_sound from '../../sounds/main.mp3';
 import character_select_sound from '../../sounds/character_select.mp3';
@@ -40,10 +56,26 @@ export const sprites: IResources = {
   score,
   default_walk1,
   default_walk2,
-  nano_walk1,
-  nano_walk2,
+  biel_walk1,
+  biel_walk2,
+  caua_walk1,
+  caua_walk2,
+  farofa_walk1,
+  farofa_walk2,
+  gu_walk1,
+  gu_walk2,
+  kevin_walk1,
+  kevin_walk2,
   leo_walk1,
   leo_walk2,
+  lo_walk1,
+  lo_walk2,
+  marco_walk1,
+  marco_walk2,
+  nano_walk1,
+  nano_walk2,
+  vi_walk1,
+  vi_walk2,
   main_sound,
   run_sound,
   jump_sound,
