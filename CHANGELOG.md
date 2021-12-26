@@ -11,6 +11,7 @@
 - Adição do título na tela de Game Over
 - Alteração do Score Board
 - Adição da possiblidade de esconder o score
+- Adição da possiblidade de voltar para o menu inicial a partir da tela de Game Over
 - Correções de bugs de renderização de fontes
 - Correções de bugs de redimensionamento de tela
 
