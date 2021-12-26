@@ -3,5 +3,5 @@ interface IState {
 }
 
 export const meta: IState = {
-  version: '0.2.0',
+  version: '0.2.1',
 };
