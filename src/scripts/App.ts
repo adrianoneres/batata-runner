@@ -3,7 +3,6 @@ import 'pixi-sound';
 
 import { game, managers } from './state';
 import { AppLoader } from './loader/AppLoader';
-import { Scene } from './scenes/Scene';
 import { MenuScene } from './scenes/MenuScene';
 import { GameScene } from './scenes/GameScene';
 

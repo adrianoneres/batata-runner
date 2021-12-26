@@ -120,9 +120,14 @@ export class MenuScene extends Scene {
     this.playButton.interactive = true;
     this.playButton.buttonMode = true;
     this.playButton.on('pointerdown', () => {
-      resources.sounds['menu_select_sound'].sound.play({
+      this.playButton.texture =
+        resources.sprites['play_button_pressed'].texture;
+      resources.sounds['character_select_sound'].sound.play({
         volume: 1,
       });
+    });
+    this.playButton.on('pointerup', () => {
+      resources.sprites['play_button'].texture;
       managers.scenes.start(new GameScene());
     });
     this.container.addChild(this.playButton);

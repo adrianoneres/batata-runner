@@ -1,5 +1,8 @@
 import background from '../../sprites/background.png';
+import back_button from '../../sprites/back_button.png';
+import back_button_pressed from '../../sprites/back_button_pressed.png';
 import logo from '../../sprites/logo.png';
+import gameover from '../../sprites/gameover.png';
 import platform from '../../sprites/platform.png';
 import platform_left from '../../sprites/platform_left.png';
 import platform_right from '../../sprites/platform_right.png';
@@ -14,7 +17,9 @@ import tile_left from '../../sprites/tile_left.png';
 import tile_right from '../../sprites/tile_right.png';
 import select_char from '../../sprites/select_char.png';
 import play_button from '../../sprites/play_button.png';
+import play_button_pressed from '../../sprites/play_button_pressed.png';
 import restart_button from '../../sprites/restart_button.png';
+import restart_button_pressed from '../../sprites/restart_button_pressed.png';
 import score from '../../sprites/score.png';
 import batima_walk1 from '../../sprites/batima_walk1.png';
 import batima_walk2 from '../../sprites/batima_walk2.png';
@@ -59,7 +64,10 @@ interface IResources {
 
 export const sprites: IResources = {
   background,
+  back_button,
+  back_button_pressed,
   logo,
+  gameover,
   platform,
   platform_left,
   platform_right,
@@ -74,7 +82,9 @@ export const sprites: IResources = {
   tile_right,
   select_char,
   play_button,
+  play_button_pressed,
   restart_button,
+  restart_button_pressed,
   score,
   batima_walk1,
   batima_walk2,
