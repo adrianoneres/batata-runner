@@ -1,5 +1,9 @@
 # Changelog - Batata Runner
 
+## 0.2.2 - 26/12/2021
+
+- Adição da possibilidade de pular com a barra de espaços ou com a seta para cima
+
 ## 0.2.1 - 25/12/2021
 
 - Correção de bug no score board ao redimensionar tela

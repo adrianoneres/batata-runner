@@ -24,6 +24,14 @@ export class Hero {
     this.sprite.loop = true;
     this.sprite.animationSpeed = 0.125;
     this.sprite.play();
+
+    document.addEventListener('keydown', event => {
+      const { code } = event;
+
+      if (code === 'Space' || code === 'ArrowUp') {
+        this.startJump();
+      }
+    });
   }
 
   get left() {
