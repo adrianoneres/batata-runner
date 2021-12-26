@@ -1,4 +1,4 @@
-# Batata Runner v. 0.2.0
+# Changelog - Batata Runner
 
 ## 0.2.0 - 25/12/2021
 
@@ -8,7 +8,7 @@
 - Alteração do Score Board
 - Adição da possiblidade de esconder o score
 - Correções de bugs de renderização de fontes
-- Correções de bugs de redimensionamento de
+- Correções de bugs de redimensionamento de tela
 
 ## 0.1.0 - 24/12/2021
 
