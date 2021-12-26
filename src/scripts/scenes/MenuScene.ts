@@ -130,8 +130,11 @@ export class MenuScene extends Scene {
         volume: 1,
       });
     });
+    this.playButton.on('pointerout', () => {
+      this.playButton.texture = resources.sprites['play_button'].texture;
+    });
     this.playButton.on('pointerup', () => {
-      resources.sprites['play_button'].texture;
+      this.playButton.texture = resources.sprites['play_button'].texture;
       managers.scenes.start(new GameScene());
     });
     this.container.addChild(this.playButton);
