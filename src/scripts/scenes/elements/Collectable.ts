@@ -1,6 +1,6 @@
 import { AnimatedSprite, Sprite } from 'pixi.js';
 
-import { state } from '../../state/Global';
+import { resources } from '../../state';
 import { Hero } from '../../characters/Hero';
 
 export class Collectable {
@@ -8,12 +8,12 @@ export class Collectable {
 
   constructor(x: number, y: number) {
     this.sprite = new AnimatedSprite([
-      state.resources['potato1'].texture,
-      state.resources['potato2'].texture,
-      state.resources['potato3'].texture,
-      state.resources['potato4'].texture,
-      state.resources['potato5'].texture,
-      state.resources['potato6'].texture,
+      resources.sprites['potato1'].texture,
+      resources.sprites['potato2'].texture,
+      resources.sprites['potato3'].texture,
+      resources.sprites['potato4'].texture,
+      resources.sprites['potato5'].texture,
+      resources.sprites['potato6'].texture,
     ]);
     this.sprite.x = x;
     this.sprite.y = y;

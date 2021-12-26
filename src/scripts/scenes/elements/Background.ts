@@ -1,8 +1,10 @@
-import { Container, Graphics, Sprite } from 'pixi.js';
-import { state } from '../../state/Global';
+import { Container, Graphics, Sprite, Texture } from 'pixi.js';
+
+import { resources } from '../../state';
 
 export class Background {
   container: Container;
+  texture: Texture;
   speed: number;
   sprites: Sprite[];
 
@@ -30,8 +32,14 @@ export class Background {
     }
   }
 
+  onWindowResize() {
+    this.container.removeChildren();
+    this.createSprites();
+  }
+
   createSprite(index: number) {
-    const sprite = new Sprite(state.resources['background'].texture);
+    this.texture = resources.sprites['background'].texture;
+    const sprite = new Sprite(this.texture);
     sprite.x = sprite.width * index;
     sprite.y = window.innerHeight - sprite.height;
 

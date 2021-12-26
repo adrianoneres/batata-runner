@@ -1,60 +1,82 @@
-import { Container, Graphics, Sprite, Text } from 'pixi.js';
+import { Sprite, Text } from 'pixi.js';
 
-import { state } from '../state/Global';
+import { game, managers, resources } from '../state';
 import { Scene } from './Scene';
-import { LabelScore } from './elements/LabelScore';
-import { MainScene } from './MainScene';
-import { Background } from './elements/Background';
-
-const CENTER_X = window.innerWidth / 2;
-const CENTER_Y = window.innerHeight / 2;
+import { GameScene } from './GameScene';
 export class FinalScene extends Scene {
   popup: Sprite;
-  labelScore: LabelScore;
+  score: Text;
+  amount: number;
+  restartButton: Sprite;
 
   constructor(amount: number) {
     super();
-    this.container.interactive = true;
+    this.amount = amount;
+    this.createScene();
+  }
+
+  createScene() {
     this.createBackground();
     this.createPopup();
-    this.showScore(amount);
+    this.createScore(this.amount);
     this.createRestartButton();
   }
 
+  onWindowResize(): void {
+    this.resizeScene();
+    this.resizeElements();
+  }
+
   createPopup() {
-    this.popup = new Sprite(state.resources['score'].texture);
-    this.popup.x = CENTER_X - this.popup.width / 2;
-    this.popup.y = CENTER_Y - this.popup.height;
+    this.popup = new Sprite(resources.sprites['score'].texture);
+    this.popup.x = this.centerX - this.popup.width / 2;
+    this.popup.y = this.centerY - this.popup.height;
     this.container.addChild(this.popup);
   }
 
-  showScore(amount: number) {
-    const scoreText = new Text(`${amount}`);
-    scoreText.style = {
+  createScore(amount: number) {
+    this.score = new Text(`${amount}`);
+    this.score.x = this.centerX - this.score.width / 2;
+    this.score.y = this.centerY - this.popup.height + this.popup.height / 2;
+    this.score.style = {
       fontFamily: 'VT323',
       fontSize: 60,
       fill: ['#FFFFFF'],
     };
-    scoreText.y = CENTER_Y - this.popup.height + this.popup.height / 2;
-    scoreText.x = CENTER_X - scoreText.width / 2;
-    this.container.addChild(scoreText);
+
+    this.container.addChild(this.score);
   }
 
   createRestartButton() {
-    const button = new Sprite(state.resources['restart_button'].texture);
-    button.width = 140;
-    button.height = 70;
-    button.x = CENTER_X - button.width / 2;
-    button.y = CENTER_Y - this.popup.height + this.popup.height + 60;
-    button.interactive = true;
-    button.buttonMode = true;
-    button.on('pointerdown', () => {
-      state.resources['menu_select_sound'].sound.play({
+    this.restartButton = new Sprite(
+      resources.sprites['restart_button'].texture,
+    );
+    this.restartButton.width = 140;
+    this.restartButton.height = 70;
+    this.restartButton.x = this.centerX - this.restartButton.width / 2;
+    this.restartButton.y = this.centerY + 60;
+    this.restartButton.interactive = true;
+    this.restartButton.buttonMode = true;
+    this.restartButton.on('pointerdown', () => {
+      resources.sounds['menu_select_sound'].sound.play({
         volume: 1,
       });
-      state.scene.start(new MainScene());
+      managers.scenes.start(new GameScene());
     });
-    this.container.addChild(button);
+
+    this.container.addChild(this.restartButton);
+  }
+
+  resizeElements() {
+    this.popup.x = this.centerX - this.popup.width / 2;
+    this.popup.y = this.centerY - this.popup.height;
+
+    this.score.x = this.centerX - this.score.width / 2;
+    this.score.y = this.centerY - this.popup.height + this.popup.height / 2;
+
+    this.restartButton.x = this.centerX - this.restartButton.width / 2;
+    this.restartButton.y =
+      this.centerY - this.popup.height + this.popup.height + 60;
   }
 
   update(deltaTime: number) {

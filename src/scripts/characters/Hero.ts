@@ -1,6 +1,6 @@
 import { AnimatedSprite } from 'pixi.js';
 
-import { state } from '../state/Global';
+import { resources, game } from '../state';
 import { Platform } from '../scenes/elements/Platform';
 
 export class Hero {
@@ -16,8 +16,8 @@ export class Hero {
     this.jumpIndex = 0;
     this.platform = null;
     this.sprite = new AnimatedSprite([
-      state.resources[`${state.character}_walk1`].texture,
-      state.resources[`${state.character}_walk2`].texture,
+      resources.sprites[`${game.selectedCharacter}_walk1`].texture,
+      resources.sprites[`${game.selectedCharacter}_walk2`].texture,
     ]);
     this.sprite.x = 100;
     this.sprite.y = 100;
@@ -48,7 +48,7 @@ export class Hero {
 
   startJump() {
     if (this.platform || this.jumpIndex === 1) {
-      state.resources['jump_sound'].sound.play({ volume: 0.1 });
+      resources.sounds['jump_sound'].sound.play({ volume: 0.1 });
       ++this.jumpIndex;
       this.platform = null;
       this.distanceY = -25;
@@ -78,7 +78,7 @@ export class Hero {
 
   collect() {
     ++this.score;
-    state.resources['collect_sound'].sound.play({ volume: 0.5 });
+    resources.sounds['collect_sound'].sound.play({ volume: 0.5 });
     this.sprite.emit('score', { score: this.score });
     document.dispatchEvent(
       new CustomEvent('collect', {

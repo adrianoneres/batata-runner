@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@types/pixi.js": "^5.0.0",
+    "@types/webfontloader": "^1.6.34",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.4",
     "webpack": "^5.65.0",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "pixi-sound": "^3.0.5",
-    "pixi.js": "^6.2.0"
+    "pixi.js": "^6.2.0",
+    "webfontloader": "^1.6.28"
   }
 }

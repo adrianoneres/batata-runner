@@ -1,6 +1,6 @@
 import { Container, Sprite } from 'pixi.js';
 
-import { state } from '../../state/Global';
+import { game, resources } from '../../state';
 import { Hero } from '../../characters/Hero';
 import { Collectable } from './Collectable';
 
@@ -21,7 +21,7 @@ export class Platform {
     this.collectables = [];
     this.collectablesOffsetMin = 100;
     this.collectablesOffsetMax = 200;
-    this.distanceX = state.speed;
+    this.distanceX = -game.speed;
     this.rows = rows;
     this.cols = cols;
     this.width = cols * TILE_SIZE;
@@ -75,8 +75,7 @@ export class Platform {
       tile_position = '_right';
     }
     const texture = `${tile_type}${tile_position}`;
-    // const texture = row === 0 ? 'platform' : 'tile';
-    const tile = new Sprite(state.resources[texture].texture);
+    const tile = new Sprite(resources.sprites[texture].texture);
     this.container.addChild(tile);
     tile.x = col * tile.width;
     tile.y = row * tile.height;
@@ -131,10 +130,8 @@ export class Platform {
     }
   }
 
-  increaseSpeed(score: number) {
-    const speed = score === 0 ? -5 : -5 - score * 0.25;
-    state.speed = speed;
-    this.distanceX = speed;
+  changeSpeed() {
+    this.distanceX = -game.speed;
   }
 
   move() {

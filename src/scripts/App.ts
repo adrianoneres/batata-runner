@@ -1,26 +1,21 @@
 import { Application } from 'pixi.js';
 import 'pixi-sound';
 
-import { state } from './state/Global';
+import { game, managers } from './state';
 import { AppLoader } from './loader/AppLoader';
 import { Scene } from './scenes/Scene';
-import { SceneManager } from './scenes/SceneManager';
-import { MainMenuScene } from './scenes/MainMenuScene';
+import { MenuScene } from './scenes/MenuScene';
+import { GameScene } from './scenes/GameScene';
 
 const frameRate = 15; // 1000/15 = ~60 FPS
 export class App {
-  app: Application;
-  loader: AppLoader;
-  scene: Scene;
-
   run() {
     let time = 0;
-    this.app = new Application({ resizeTo: window });
-    document.body.appendChild(this.app.view);
+    const app = new Application({ resizeTo: window });
+    document.body.appendChild(app.view);
+    app.stage.addChild(managers.scenes.container);
 
-    state.scene = new SceneManager();
-    this.app.stage.addChild(state.scene.container);
-    this.app.ticker.add(deltaTime => {
+    app.ticker.add(deltaTime => {
       const now = new Date().getTime();
       const diff = now - time;
 
@@ -29,10 +24,26 @@ export class App {
       }
 
       time = now;
-      state.scene.update(deltaTime);
+      managers.scenes.update(deltaTime);
     });
 
-    this.loader = new AppLoader(this.app.loader);
-    this.loader.preload().then(() => state.scene.start(new MainMenuScene()));
+    const loader = new AppLoader(app.loader);
+    loader.preload().then(() => managers.scenes.start(new MenuScene()));
+
+    document.addEventListener('window:resize', () => {
+      managers.scenes.scene.onWindowResize();
+    });
+
+    document.addEventListener('collect', () => {
+      game.speed += 0.25;
+
+      if (managers.scenes.scene instanceof GameScene) {
+        (managers.scenes.scene as GameScene).platforms.platforms.forEach(
+          platform => {
+            platform.changeSpeed();
+          },
+        );
+      }
+    });
   }
 }

@@ -1,8 +1,7 @@
 import { Container } from 'pixi.js';
 
-import { state } from '../../state/Global';
-import { Platform } from './Platform';
 import { randomNumber } from '../../utils/NumberUtils';
+import { Platform } from './Platform';
 import { Hero } from '../../characters/Hero';
 
 interface IRanges {
@@ -51,14 +50,6 @@ export class Platforms {
       rows: 4,
       cols: 6,
       x: 200,
-    });
-
-    document.addEventListener('collect', ({ detail }: CustomEvent) => {
-      const { score } = detail;
-
-      this.platforms.forEach(platform => {
-        platform.increaseSpeed(score);
-      });
     });
   }
 

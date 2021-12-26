@@ -1,10 +1,8 @@
 import background from '../../sprites/background.png';
-import jump from '../../sprites/jump.png';
 import logo from '../../sprites/logo.png';
 import platform from '../../sprites/platform.png';
 import platform_left from '../../sprites/platform_left.png';
 import platform_right from '../../sprites/platform_right.png';
-import potato from '../../sprites/potato.png';
 import potato1 from '../../sprites/potato1.png';
 import potato2 from '../../sprites/potato2.png';
 import potato3 from '../../sprites/potato3.png';
@@ -18,8 +16,6 @@ import select_char from '../../sprites/select_char.png';
 import play_button from '../../sprites/play_button.png';
 import restart_button from '../../sprites/restart_button.png';
 import score from '../../sprites/score.png';
-import default_walk1 from '../../sprites/default_walk1.png';
-import default_walk2 from '../../sprites/default_walk2.png';
 import batima_walk1 from '../../sprites/batima_walk1.png';
 import batima_walk2 from '../../sprites/batima_walk2.png';
 import biel_walk1 from '../../sprites/biel_walk1.png';
@@ -63,12 +59,10 @@ interface IResources {
 
 export const sprites: IResources = {
   background,
-  jump,
   logo,
   platform,
   platform_left,
   platform_right,
-  potato,
   potato1,
   potato2,
   potato3,
@@ -82,8 +76,6 @@ export const sprites: IResources = {
   play_button,
   restart_button,
   score,
-  default_walk1,
-  default_walk2,
   batima_walk1,
   batima_walk2,
   biel_walk1,
@@ -112,6 +104,9 @@ export const sprites: IResources = {
   vi_walk2,
   shulqs_walk1,
   shulqs_walk2,
+};
+
+export const sounds: IResources = {
   main_sound,
   run_sound,
   jump_sound,

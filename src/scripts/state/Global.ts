@@ -1,39 +1,25 @@
-import { SceneManager } from '../scenes/SceneManager';
+// import { SceneManager } from '../scenes/SceneManager';
+// import { SongManager } from '../sounds/SoundManager';
 
-interface IState {
-  speed: number;
-  scene: SceneManager;
-  resources: {
-    [key: string]: any;
-  };
-  character: string;
-  characters: ICharacter[];
-}
+// interface IState {
+//   version: string;
+//   speed: number;
+//   sceneManager: SceneManager;
+//   soundManager: SongManager;
+//   selectedCharacter: string;
+//   characters: ICharacter[];
+//   resources: { [key: string]: any };
+// }
 
-interface ICharacter {
-  id: string;
-  name: string;
-}
+// interface ICharacter {
+//   id: string;
+//   name: string;
+// }
 
-export const state: IState = {
-  speed: -5,
-  scene: {} as SceneManager,
-  resources: {},
-  character: 'batima',
-  characters: [
-    { id: 'batima', name: 'Bátima' },
-    { id: 'biel', name: 'Biel' },
-    { id: 'caua', name: 'Caua' },
-    { id: 'flexa', name: 'Flexa' },
-    { id: 'farofa', name: 'Farofa' },
-    { id: 'gu', name: 'Gu' },
-    { id: 'kevin', name: 'Kevin' },
-    { id: 'leo', name: 'Leo' },
-    { id: 'lo', name: 'Lo' },
-    { id: 'marco', name: 'Marco' },
-    { id: 'miranha', name: 'Miranha' },
-    { id: 'nano', name: 'Nano' },
-    { id: 'shulqs', name: 'Shulqs' },
-    { id: 'vi', name: 'Vi' },
-  ],
-};
+// export const state = {
+//   version: '0.1.1',
+//   speed: -5,
+//   sceneManager: new SceneManager(),
+//   soundManager: new SongManager(),
+//   resources: {},
+// };

@@ -1,7 +1,7 @@
 import { Loader } from 'pixi.js';
 
-import { sprites } from './Resources';
-import { state } from '../state/Global';
+import { resources } from '../state';
+import { sprites, sounds } from './Resources';
 
 export class AppLoader {
   loader: Loader;
@@ -16,8 +16,23 @@ export class AppLoader {
         this.loader.add(key, sprites[key]);
       }
 
-      this.loader.load((_, resources) => {
-        state.resources = resources;
+      for (let key in sounds) {
+        this.loader.add(key, sounds[key]);
+      }
+
+      this.loader.load((_, loaderResources) => {
+        resources.sprites = Object.keys(loaderResources)
+          .filter(value => loaderResources[value].extension === 'png')
+          .reduce((obj, key) => {
+            return { ...obj, [key]: loaderResources[key] };
+          }, {});
+
+        resources.sounds = Object.keys(loaderResources)
+          .filter(value => loaderResources[value].extension === 'mp3')
+          .reduce((obj, key) => {
+            return { ...obj, [key]: loaderResources[key] };
+          }, {});
+
         resolve();
       });
     });
