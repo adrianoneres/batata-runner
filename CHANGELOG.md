@@ -1,0 +1,18 @@
+# Batata Runner v. 0.2.0
+
+## 0.2.0 - 25/12/2021
+
+- Melhorias visuais na HUD
+- Melhoria nas animações dos botões
+- Adição do título na tela de Game Over
+- Alteração do Score Board
+- Adição da possiblidade de esconder o score
+- Correções de bugs de renderização de fontes
+- Correções de bugs de redimensionamento de
+
+## 0.1.0 - 24/12/2021
+
+- Adição de 4 novos personagens: Shulqs, Bátima, Flexa e Miranha
+- Melhoria nas plataformas. Agora elas são mais visíveis.
+- Melhoria no Background. Agora ele é mais sutil e atrapalha menos a visão durante o jogo.
+- Adição de animação na batata. Isso facilita a visualização delas durante o jogo
