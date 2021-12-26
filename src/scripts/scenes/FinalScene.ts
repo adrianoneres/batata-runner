@@ -27,7 +27,7 @@ export class FinalScene extends Scene {
     this.createRestartButton();
   }
 
-  onWindowResize(): void {
+  onWindowResize() {
     this.resizeScene();
     this.resizeElements();
   }

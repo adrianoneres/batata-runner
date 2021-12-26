@@ -31,8 +31,9 @@ export class GameScene extends Scene {
     this.createScore();
   }
 
-  onWindowResize(): void {
+  onWindowResize() {
     this.resizeScene();
+    this.resizeElements();
   }
 
   createPlatforms() {
@@ -114,14 +115,18 @@ export class GameScene extends Scene {
     this.scoreBoard.play();
   }
 
+  resizeElements() {
+    this.scoreBoard.x = window.innerWidth - this.scoreBoard.width - 10;
+    this.scoreBoard.y = 10;
+
+    this.scoreValue.x = window.innerWidth - this.scoreBoard.width + 20;
+    this.scoreValue.y = 40;
+  }
+
   update(deltaTime: number) {
     this.background.update(deltaTime);
     this.platforms.checkCollision(this.hero);
     this.platforms.update(deltaTime);
     this.hero.update(deltaTime);
-  }
-
-  destroy() {
-    super.container.destroy();
   }
 }

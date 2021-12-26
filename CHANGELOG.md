@@ -1,5 +1,9 @@
 # Changelog - Batata Runner
 
+## 0.2.1 - 25/12/2021
+
+- Correção de bug no score board ao redimensionar tela
+
 ## 0.2.0 - 25/12/2021
 
 - Melhorias visuais na HUD

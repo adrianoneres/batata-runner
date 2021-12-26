@@ -37,7 +37,7 @@ export class MenuScene extends Scene {
     this.createVersionText();
   }
 
-  onWindowResize(): void {
+  onWindowResize() {
     this.resizeScene();
     this.resizeElements();
   }
