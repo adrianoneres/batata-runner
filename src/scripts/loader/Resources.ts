@@ -2,6 +2,7 @@ import background from '../../sprites/background.png';
 import back_button from '../../sprites/back_button.png';
 import back_button_pressed from '../../sprites/back_button_pressed.png';
 import logo from '../../sprites/logo.png';
+import final_score_board from '../../sprites/final_score_board.png';
 import gameover from '../../sprites/gameover.png';
 import platform from '../../sprites/platform.png';
 import platform_left from '../../sprites/platform_left.png';
@@ -15,12 +16,16 @@ import potato6 from '../../sprites/potato6.png';
 import tile from '../../sprites/tile.png';
 import tile_left from '../../sprites/tile_left.png';
 import tile_right from '../../sprites/tile_right.png';
-import select_char from '../../sprites/select_char.png';
+import select_char_board from '../../sprites/select_char_board.png';
 import play_button from '../../sprites/play_button.png';
 import play_button_pressed from '../../sprites/play_button_pressed.png';
 import restart_button from '../../sprites/restart_button.png';
 import restart_button_pressed from '../../sprites/restart_button_pressed.png';
-import score from '../../sprites/score.png';
+import score1 from '../../sprites/score1.png';
+import score2 from '../../sprites/score2.png';
+import score3 from '../../sprites/score3.png';
+import score4 from '../../sprites/score4.png';
+import score5 from '../../sprites/score5.png';
 import batima_walk1 from '../../sprites/batima_walk1.png';
 import batima_walk2 from '../../sprites/batima_walk2.png';
 import biel_walk1 from '../../sprites/biel_walk1.png';
@@ -67,6 +72,7 @@ export const sprites: IResources = {
   back_button,
   back_button_pressed,
   logo,
+  final_score_board,
   gameover,
   platform,
   platform_left,
@@ -80,12 +86,16 @@ export const sprites: IResources = {
   tile,
   tile_left,
   tile_right,
-  select_char,
+  select_char_board,
   play_button,
   play_button_pressed,
   restart_button,
   restart_button_pressed,
-  score,
+  score1,
+  score2,
+  score3,
+  score4,
+  score5,
   batima_walk1,
   batima_walk2,
   biel_walk1,

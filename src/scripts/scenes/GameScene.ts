@@ -1,4 +1,4 @@
-import { Text } from 'pixi.js';
+import { AnimatedSprite, Sprite, Text } from 'pixi.js';
 
 import { game, managers, resources } from '../state';
 import { Scene } from './Scene';
@@ -10,7 +10,8 @@ import { Hero } from '../characters/Hero';
 export class GameScene extends Scene {
   background: Background;
   hero: Hero;
-  score: Text;
+  scoreValue: Text;
+  scoreBoard: AnimatedSprite;
   platforms: Platforms;
 
   constructor() {
@@ -47,7 +48,7 @@ export class GameScene extends Scene {
       this.hero.startJump();
     });
     this.hero.sprite.on('score', () => {
-      this.score.text = `Score: ${this.hero.score}`;
+      this.scoreValue.text = '' + this.hero.score;
     });
     this.hero.sprite.once('die', () => {
       game.speed = 5;
@@ -57,15 +58,60 @@ export class GameScene extends Scene {
   }
 
   createScore() {
-    this.score = new Text(`Score: ${this.hero.score}`);
-    this.score.style = {
+    this.scoreBoard = new AnimatedSprite([
+      resources.sprites[game.showScore ? 'score5' : 'score1'].texture,
+    ]);
+    this.scoreBoard.x = window.innerWidth - this.scoreBoard.width - 10;
+    this.scoreBoard.y = 10;
+    this.scoreBoard.interactive = true;
+    this.scoreBoard.buttonMode = true;
+    this.scoreBoard.loop = false;
+    this.scoreBoard.animationSpeed = 0.125;
+    this.scoreBoard.on('pointerdown', () => {
+      game.showScore = !game.showScore;
+      game.showScore ? this.showScore() : this.hideScore();
+    });
+
+    this.container.addChild(this.scoreBoard);
+
+    this.scoreValue = new Text('' + this.hero.score);
+    this.scoreValue.style = {
       fontFamily: 'VT323',
-      fontSize: 20,
-      fill: ['#000000'],
+      fontSize: 30,
+      fill: ['#FFFFFF'],
     };
-    this.score.x = 10;
-    this.score.y = 10;
-    this.container.addChild(this.score);
+    this.scoreValue.x = window.innerWidth - this.scoreBoard.width + 20;
+    this.scoreValue.y = 40;
+    this.scoreValue.visible = game.showScore;
+    this.container.addChild(this.scoreValue);
+  }
+
+  showScore() {
+    this.scoreBoard.textures = [
+      resources.sprites['score1'].texture,
+      resources.sprites['score2'].texture,
+      resources.sprites['score3'].texture,
+      resources.sprites['score4'].texture,
+      resources.sprites['score5'].texture,
+    ];
+
+    this.scoreBoard.play();
+    setTimeout(() => {
+      this.scoreValue.visible = true;
+    }, 750);
+  }
+
+  hideScore() {
+    this.scoreValue.visible = false;
+    this.scoreBoard.textures = [
+      resources.sprites['score5'].texture,
+      resources.sprites['score4'].texture,
+      resources.sprites['score3'].texture,
+      resources.sprites['score2'].texture,
+      resources.sprites['score1'].texture,
+    ];
+
+    this.scoreBoard.play();
   }
 
   update(deltaTime: number) {

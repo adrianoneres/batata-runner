@@ -20,7 +20,7 @@ export class Background {
     const layer = new Graphics();
     const width = window.innerWidth;
     const height = window.innerHeight;
-    layer.beginFill(0x92b9ff);
+    layer.beginFill(0xa2c0f8);
     layer.drawRect(0, 0, width, height);
     this.container.addChild(layer);
   }

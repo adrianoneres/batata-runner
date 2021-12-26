@@ -50,7 +50,7 @@ export class MenuScene extends Scene {
   }
 
   createPopup() {
-    this.popup = new Sprite(resources.sprites['select_char'].texture);
+    this.popup = new Sprite(resources.sprites['select_char_board'].texture);
     this.popup.interactive = true;
     this.popup.buttonMode = true;
     this.popup.x = this.centerX - this.popup.width / 2;
@@ -70,9 +70,13 @@ export class MenuScene extends Scene {
       this.container.removeChild(this.selectedName);
     }
 
+    const currentCharacter = characters.availableCharacters.find(
+      char => char.id === game.selectedCharacter,
+    );
+
     this.charSprite = new AnimatedSprite([
-      resources.sprites[`${game.selectedCharacter}_walk1`].texture,
-      resources.sprites[`${game.selectedCharacter}_walk2`].texture,
+      resources.sprites[`${currentCharacter.id}_walk1`].texture,
+      resources.sprites[`${currentCharacter.id}_walk2`].texture,
     ]);
     this.charSprite.x = this.centerX - this.charSprite.width / 2;
     this.charSprite.y = this.centerY + this.charSprite.height / 2 + 16;
@@ -82,7 +86,7 @@ export class MenuScene extends Scene {
     this.selectedSprite = this.charSprite;
     this.container.addChild(this.charSprite);
 
-    this.charName = new Text(game.selectedCharacter);
+    this.charName = new Text(currentCharacter.name);
     this.charName.anchor.set(0.5);
     this.charName.x = this.centerX;
     this.charName.y = this.centerY + this.popup.height - 54;

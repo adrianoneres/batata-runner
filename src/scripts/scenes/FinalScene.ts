@@ -40,7 +40,7 @@ export class FinalScene extends Scene {
   }
 
   createPopup() {
-    this.popup = new Sprite(resources.sprites['score'].texture);
+    this.popup = new Sprite(resources.sprites['final_score_board'].texture);
     this.popup.x = this.centerX - this.popup.width / 2;
     this.popup.y = this.centerY - this.popup.height + 80;
     this.container.addChild(this.popup);
