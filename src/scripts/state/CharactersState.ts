@@ -14,6 +14,7 @@ export const characters: IState = {
     { id: 'caua', name: 'Caua' },
     { id: 'flexa', name: 'Flexa' },
     { id: 'farofa', name: 'Farofa' },
+    { id: 'gab', name: 'Gab' },
     { id: 'gu', name: 'Gu' },
     { id: 'kevin', name: 'Kevin' },
     { id: 'leo', name: 'Leo' },
@@ -23,5 +24,6 @@ export const characters: IState = {
     { id: 'nano', name: 'Nano' },
     { id: 'shulqs', name: 'Shulqs' },
     { id: 'vi', name: 'Vi' },
+    { id: 'yu', name: 'Yu' },
   ],
 };

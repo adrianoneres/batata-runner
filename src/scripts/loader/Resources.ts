@@ -36,6 +36,8 @@ import farofa_walk1 from '../../sprites/farofa_walk1.png';
 import farofa_walk2 from '../../sprites/farofa_walk2.png';
 import flexa_walk1 from '../../sprites/flexa_walk1.png';
 import flexa_walk2 from '../../sprites/flexa_walk2.png';
+import gab_walk1 from '../../sprites/gab_walk1.png';
+import gab_walk2 from '../../sprites/gab_walk2.png';
 import gu_walk1 from '../../sprites/gu_walk1.png';
 import gu_walk2 from '../../sprites/gu_walk2.png';
 import kevin_walk1 from '../../sprites/kevin_walk1.png';
@@ -54,6 +56,8 @@ import shulqs_walk1 from '../../sprites/shulqs_walk1.png';
 import shulqs_walk2 from '../../sprites/shulqs_walk2.png';
 import vi_walk1 from '../../sprites/vi_walk1.png';
 import vi_walk2 from '../../sprites/vi_walk2.png';
+import yu_walk1 from '../../sprites/yu_walk1.png';
+import yu_walk2 from '../../sprites/yu_walk2.png';
 
 import main_sound from '../../sounds/main.mp3';
 import character_select_sound from '../../sounds/character_select.mp3';
@@ -106,6 +110,8 @@ export const sprites: IResources = {
   farofa_walk2,
   flexa_walk1,
   flexa_walk2,
+  gab_walk1,
+  gab_walk2,
   gu_walk1,
   gu_walk2,
   kevin_walk1,
@@ -124,6 +130,8 @@ export const sprites: IResources = {
   vi_walk2,
   shulqs_walk1,
   shulqs_walk2,
+  yu_walk1,
+  yu_walk2,
 };
 
 export const sounds: IResources = {

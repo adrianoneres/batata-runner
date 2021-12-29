@@ -1,5 +1,9 @@
 # Changelog - Batata Runner
 
+## 0.2.4 - 28/12/2021
+
+- Adição de dois novos personagens: Gabs e Yu.
+
 ## 0.2.3 - 26/12/2021
 
 - Correção nos estados dos botões
