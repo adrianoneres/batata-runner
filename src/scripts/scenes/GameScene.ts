@@ -17,11 +17,13 @@ export class GameScene extends Scene {
   constructor() {
     super();
     this.createScene();
-    resources.sounds['main_sound'].sound.stop();
-    resources.sounds['run_sound'].sound.stop();
-    resources.sounds['run_sound'].sound.play({
-      loop: true,
-      volume: 0.1,
+    document.getElementsByTagName('body')[0].addEventListener('click', () => {
+      resources.sounds['main_sound'].pause();
+      resources.sounds['run_sound'].pause();
+      resources.sounds['run_sound'].play({
+        loop: true,
+        volume: 0.1,
+      });
     });
   }
 
@@ -53,7 +55,7 @@ export class GameScene extends Scene {
     });
     this.hero.sprite.once('die', () => {
       game.speed = 5;
-      resources.sounds['game_over_sound'].sound.play({ volume: 0.5 });
+      resources.sounds['game_over_sound'].play({ volume: 0.5 });
       managers.scenes.start(new FinalScene(this.hero.score));
     });
   }

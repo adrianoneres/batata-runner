@@ -13,10 +13,26 @@ object-assign
  */
 
 /*!
+ * @pixi/app - v6.2.0
+ * Compiled Mon, 01 Nov 2021 16:52:10 UTC
+ *
+ * @pixi/app is licensed under the MIT License.
+ * http://www.opensource.org/licenses/mit-license
+ */
+
+/*!
  * @pixi/constants - v6.2.0
  * Compiled Mon, 01 Nov 2021 16:52:10 UTC
  *
  * @pixi/constants is licensed under the MIT License.
+ * http://www.opensource.org/licenses/mit-license
+ */
+
+/*!
+ * @pixi/core - v5.3.12
+ * Compiled Wed, 23 Mar 2022 18:34:28 UTC
+ *
+ * @pixi/core is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
 
@@ -49,14 +65,6 @@ object-assign
  * Compiled Mon, 01 Nov 2021 16:52:10 UTC
  *
  * @pixi/filter-displacement is licensed under the MIT License.
- * http://www.opensource.org/licenses/mit-license
- */
-
-/*!
- * @pixi/loaders - v6.2.0
- * Compiled Mon, 01 Nov 2021 16:52:10 UTC
- *
- * @pixi/loaders is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
 
@@ -109,10 +117,18 @@ object-assign
  */
 
 /*!
- * @pixi/runner - v6.2.0
- * Compiled Mon, 01 Nov 2021 16:52:10 UTC
+ * @pixi/runner - v5.3.12
+ * Compiled Wed, 23 Mar 2022 18:34:28 UTC
  *
  * @pixi/runner is licensed under the MIT License.
+ * http://www.opensource.org/licenses/mit-license
+ */
+
+/*!
+ * @pixi/ticker - v5.3.12
+ * Compiled Wed, 23 Mar 2022 18:34:28 UTC
+ *
+ * @pixi/ticker is licensed under the MIT License.
  * http://www.opensource.org/licenses/mit-license
  */
 
@@ -125,10 +141,35 @@ object-assign
  */
 
 /*!
+ * @pixi/utils - v5.3.12
+ * Compiled Wed, 23 Mar 2022 18:34:28 UTC
+ *
+ * @pixi/utils is licensed under the MIT License.
+ * http://www.opensource.org/licenses/mit-license
+ */
+
+/*!
+ * @pixi/utils - v6.2.0
+ * Compiled Mon, 01 Nov 2021 16:52:10 UTC
+ *
+ * @pixi/utils is licensed under the MIT License.
+ * http://www.opensource.org/licenses/mit-license
+ */
+
+/*!
  * pixi.js - v6.2.0
  * Compiled Mon, 01 Nov 2021 16:52:10 UTC
  *
  * pixi.js is licensed under the MIT License.
+ * http://www.opensource.org/licenses/mit-license
+ */
+
+/*!
+ * resource-loader - v3.0.1
+ * https://github.com/pixijs/pixi-sound
+ * Compiled Tue, 02 Jul 2019 14:06:18 UTC
+ *
+ * resource-loader is licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license
  */
 

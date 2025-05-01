@@ -56,7 +56,7 @@ export class Hero {
 
   startJump() {
     if (this.platform || this.jumpIndex === 1) {
-      resources.sounds['jump_sound'].sound.play({ volume: 0.1 });
+      resources.sounds['jump_sound'].play({ volume: 0.1 });
       ++this.jumpIndex;
       this.platform = null;
       this.distanceY = -25;
@@ -86,7 +86,7 @@ export class Hero {
 
   collect() {
     ++this.score;
-    resources.sounds['collect_sound'].sound.play({ volume: 0.5 });
+    resources.sounds['collect_sound'].play({ volume: 0.5 });
     this.sprite.emit('score', { score: this.score });
     document.dispatchEvent(
       new CustomEvent('collect', {

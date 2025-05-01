@@ -19,10 +19,11 @@ export class MenuScene extends Scene {
     super();
     this.charContainer = new Container();
     this.createScene();
-
-    resources.sounds['run_sound'].sound.stop();
-    resources.sounds['main_sound'].sound.play({
-      volume: 0.25,
+    document.getElementsByTagName('body')[0].addEventListener('click', () => {
+      resources.sounds['run_sound'].pause();
+      resources.sounds['main_sound'].play({
+        volume: 0.25,
+      });
     });
 
     this.container.once('pointerdown', () => {
@@ -109,7 +110,7 @@ export class MenuScene extends Scene {
         : currentCharIndex + 1;
     const nextChar = characters.availableCharacters[nextIndex];
     game.selectedCharacter = nextChar.id;
-    resources.sounds['character_select_sound'].sound.play({
+    resources.sounds['character_select_sound'].play({
       volume: 1,
     });
     this.showCharacter(nextChar.id);
@@ -126,7 +127,7 @@ export class MenuScene extends Scene {
     this.playButton.on('pointerdown', () => {
       this.playButton.texture =
         resources.sprites['play_button_pressed'].texture;
-      resources.sounds['character_select_sound'].sound.play({
+      resources.sounds['character_select_sound'].play({
         volume: 1,
       });
     });

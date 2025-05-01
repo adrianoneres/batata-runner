@@ -5,7 +5,7 @@ interface IState {
 }
 
 export const game: IState = {
-  selectedCharacter: 'pedro',
+  selectedCharacter: 'pepe',
   showScore: true,
   speed: 5,
 };

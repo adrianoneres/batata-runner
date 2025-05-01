@@ -30,7 +30,7 @@ export class AppLoader {
         resources.sounds = Object.keys(loaderResources)
           .filter(value => loaderResources[value].extension === 'mp3')
           .reduce((obj, key) => {
-            return { ...obj, [key]: loaderResources[key] };
+            return { ...obj, [key]: new Audio(loaderResources[key].url) };
           }, {});
 
         resolve();

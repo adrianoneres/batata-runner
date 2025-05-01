@@ -36,12 +36,10 @@ import gab_walk1 from '../../sprites/gab_walk1.png';
 import gab_walk2 from '../../sprites/gab_walk2.png';
 import gu_walk1 from '../../sprites/gu_walk1.png';
 import gu_walk2 from '../../sprites/gu_walk2.png';
-import leo_walk1 from '../../sprites/leo_walk1.png';
-import leo_walk2 from '../../sprites/leo_walk2.png';
 import nano_walk1 from '../../sprites/nano_walk1.png';
 import nano_walk2 from '../../sprites/nano_walk2.png';
-import pedro_walk1 from '../../sprites/pedro_walk1.png';
-import pedro_walk2 from '../../sprites/pedro_walk2.png';
+import pepe_walk1 from '../../sprites/pepe_walk1.png';
+import pepe_walk2 from '../../sprites/pepe_walk2.png';
 import shulqs_walk1 from '../../sprites/shulqs_walk1.png';
 import shulqs_walk2 from '../../sprites/shulqs_walk2.png';
 import vi_walk1 from '../../sprites/vi_walk1.png';
@@ -98,12 +96,10 @@ export const sprites: IResources = {
   gab_walk2,
   gu_walk1,
   gu_walk2,
-  leo_walk1,
-  leo_walk2,
   nano_walk1,
   nano_walk2,
-  pedro_walk1,
-  pedro_walk2,
+  pepe_walk1,
+  pepe_walk2,
   vi_walk1,
   vi_walk2,
   shulqs_walk1,

@@ -72,7 +72,7 @@ export class FinalScene extends Scene {
     this.backButton.on('pointerdown', () => {
       this.backButton.texture =
         resources.sprites['back_button_pressed'].texture;
-      resources.sounds['character_select_sound'].sound.play({
+      resources.sounds['character_select_sound'].play({
         volume: 1,
       });
     });
@@ -101,7 +101,7 @@ export class FinalScene extends Scene {
     this.restartButton.on('pointerdown', () => {
       this.restartButton.texture =
         resources.sprites['restart_button_pressed'].texture;
-      resources.sounds['character_select_sound'].sound.play({
+      resources.sounds['character_select_sound'].play({
         volume: 1,
       });
     });
